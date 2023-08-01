@@ -1,0 +1,17 @@
+version: "3"
+services:
+  kompassweb-dev:
+    container_name: kompassweb-dev
+#    restart: always
+    build: .
+    #    command: bash -c "./script.sh"
+    networks:
+       - kompassweb-dev
+    volumes:
+    - ./:/var/www/html/
+    ports:
+    - "5087:80"
+#Docker Networks
+networks:
+  kompassweb-dev:
+    driver: bridge
